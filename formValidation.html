@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form validation</title>
+    </head>
+    <body>
+        <form name="form1" action>
+            <table>
+                <tr>
+                    <td>
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Email</label>
+                        <input type="text" id="email" name="mail" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" onmouseover="showPassword(this)" onmouseout="hidePassword(this)">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="submit" id="button" onclick="submission(event)">
+                    </td>
+                </tr>
+            </table>
+        </form>
+        <script>
+        function showPassword(input) {
+            input.type = "text";
+        }
+
+        function hidePassword(input) {
+            input.type = "password";
+        }
+
+        function submission(e){
+            e.preventDefault(); // Prevent default form submission behavior
+            let t = document.form1;
+            let email = t.mail.value;
+            let emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+            if(!emailRegex.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+            let password = t.password.value;
+            let passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+            if(!passwordRegex.test(password)) {
+                alert("Please enter a valid password. Password must be at least 8 characters long and contain at least one uppercase letter, one lowercase letter, one digit, and one special character (@, #, $,!, %, *,?, &).");
+                return;
+            }
+            console.log(t.name.value);
+            console.log(t.mail.value);
+            console.log(t.password.value);
+        }
+    </script>
+    </body>
+</html>

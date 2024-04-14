@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="time">
+        <span id="hour"></span>
+        <span id="minute"></span>
+        <span id="second"></span>
+    </div>
+    <div id="date">
+        <span id="date"></span>
+    </div>
+    <script>
+       let va = setTimeout(function updateClock() {
+            var date = new Date();
+            document.querySelector('#hour').innerHTML = date.getHours();
+            document.querySelector('#minute').innerHTML = date.getMinutes();
+            document.querySelector('#second').innerHTML = date.getSeconds();
+            document.querySelector('#date').innerHTML = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear();
+            va = setTimeout(updateClock, 1000);
+        }, 1000);
+    </script>
+</body>
+</html>
