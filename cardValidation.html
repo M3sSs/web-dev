@@ -18,7 +18,7 @@
             let cardno=document.getElementById("card").value;
             let cardName=document.getElementById("cardName").value;
             let master_reg=/^5[1-5][0-9]{12}$/;
-            let visa_reg=/^4\d{12}(\d{3})?$/;
+            let visa_reg=/^4(\d{12})(\d{3})?$/;
             let american_reg=/^3[47][0-9]{13}$/;
             if(cardName=="master" && master_reg.test(cardno)){
                 alert("master card sucessfull");
