@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="" onsubmit="return fun()" id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+        <label for="password">Password:</label>
+        <input type="text" name="pass" id="password">
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email">
+
+        <button>Submit</button>
+    </form>
+    <script>
+        const form = document.getElementById('myForm');
+
+       
+        form.addEventListener('submit', function (event) {
+           
+            event.preventDefault();
+            console.log('Form submission prevented!');
+        });
+        function fun() {
+            let name = document.getElementById("name").value;
+            let password = document.getElementById("password").value;
+            console.log(password);
+            let email = document.getElementById("email").value;
+            if (name == "" || password == "" || email == "") {
+                return false;
+            }
+            let name_reg = /^[a-zA-z ]{6,}$/;
+            let pass_reg=/^(?=.*[A-Za-z])(?=.*\d)(?=.*[#@$%^&*]).{6,17}$/;
+            let email_reg=/^[a-z][A-z0-9]*@[a-z]*.[a-z]*$/;
+            if(pass_reg.test(password) && name_reg.test(name) && email_reg.test(email)){
+                alert("form submited");
+                return true;
+            }
+            alert("form not submited");
+            return false;
+        }
+
+    </script>
+</body>
+
+</html>

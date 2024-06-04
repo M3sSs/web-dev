@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="cardName" id="cardName">
+        <option value="master">Master</option>
+        <option value="visa">Visa</option>
+        <option value="american">American</option>
+    </select>
+    <input type="text" id="card" name="card">
+    <button onclick="fun()">Submit</button>
+    <script>
+        function fun(){
+            let cardno=document.getElementById("card").value;
+            let cardName=document.getElementById("cardName").value;
+            let master_reg=/^5[1-5][0-9]{12}$/;
+            let visa_reg=/^4\d{12}(\d{3})?$/;
+            let american_reg=/^3[47][0-9]{13}$/;
+            if(cardName=="master" && master_reg.test(cardno)){
+                alert("master card sucessfull");
+            }else if(cardName=="visa" && visa_reg.test(cardno)){
+            alert("visa card sucessfull");
+        }else if(cardName=="american" && american_reg.test(cardno)){
+            alert("american card sucessfull");
+        }else {
+            alert("invalid card no");
+        }
+        
+           
+        }
+    </script>
+</body>
+</html>

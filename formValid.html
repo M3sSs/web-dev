@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form name="form1">
+        <table>
+            <tr>
+                <td>
+                    Name: <input type="text" name="name" id="name">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Age: <input type="text" name="age" id="age">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="file" name="file">
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="submit" onclick="submission(event)">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function submission(event) {
+            event.preventDefault();
+            let t=document.form1;
+            let name=t.name.value;
+            let age=parseInt(t.age.value)+20;
+            let file=t.file.value;
+            console.log(name);
+            console.log(age);
+            console.log(file)
+        }
+    </script>
+</body>
+</html>
