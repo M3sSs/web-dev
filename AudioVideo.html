@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Audio and Video Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .media-container {
+            margin-bottom: 30px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        audio, video {
+            display: block;
+            margin-top: 10px;
+            width: 100%;
+            max-width: 600px;
+        }
+    </style>
+</head>
+<body>
+
+<h1>HTML5 Media Elements</h1>
+
+<div class="media-container">
+    <h2>Audio Example</h2>
+    <audio controls>
+        <source src="audio-file.mp3" type="audio/mpeg">
+        <source src="audio-file.ogg" type="audio/ogg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<div class="media-container">
+    <h2>Video Example</h2>
+    <video controls>
+        <source src="video-file.mp4" type="video/mp4">
+        <source src="video-file.ogg" type="video/ogg">
+        Your browser does not support the video element.
+    </video>
+</div>
+
+</body>
+</html>
